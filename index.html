@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AriiStoree - Premium Scripts</title>
+    <title>NexusStoree - Premium Scripts</title>
     <meta name="description" content="Order Script Seraphin, Vora, Nano via WhatsApp.">
     
     <!-- Google Fonts -->
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Link ke CSS -->
+    <!-- Link ke CSS Eksternal -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,18 +27,19 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Premium Script Fish it</h1>
-                <p>Fastest premium script purchasing website by nexus.</p>
+                <h1>Get your Premium Script</h1>
+                <p>I have provided various scripts for you.</p>
             </div>
         </section>
 
+        <!-- PRODUK SECTION -->
         <section class="container">
             <div class="products">
                 
                 <!-- Script 1: Seraphin -->
                 <div class="product-card">
                     <div class="logo-wrapper">
-                        <div class="logo-container">
+                        <div class="logo-container logo-bg-purple">
                             <img src="https://z-cdn-media.chatglm.cn/files/5988ba55-fbde-46d8-bbc2-87cb4ffe9fc5.png?auth_key=1868807694-1dfcbf33a12e41b98d2bb4fd6c3029ec-0-3c7449021f6418fb29e546efb4583af9" alt="Seraphin Logo" class="logo-img">
                         </div>
                     </div>
@@ -51,8 +52,9 @@
                 <!-- Script 2: Vora -->
                 <div class="product-card">
                     <div class="logo-wrapper">
-                        <div class="logo-container">
-                            <img src="https://z-cdn-media.chatglm.cn/files/993e2a76-ba2c-49d4-a042-66d4b22cdc75.jpg?auth_key=1868807694-a8d75464a34d4078ae25287fc3b7791a-0-408ef7ee1d4eeb522bcf3ff28715d991" alt="Vora Logo" class="logo-img">
+                        <!-- UPDATED LOGO: Vorahub Image -->
+                        <div class="logo-container wide-padding logo-bg-dark">
+                            <img src="https://z-cdn-media.chatglm.cn/files/8ddaa2c3-898f-4779-a0f3-f6abf5418e42.jpg?auth_key=1868832987-ceaf09c44150440aa48c2f8c2e20a104-0-daa1f29675725044897d0d7702aa4aff" alt="Vora Logo" class="logo-img">
                         </div>
                     </div>
                     <h2 class="product-title">Vora Hub</h2>
@@ -64,8 +66,9 @@
                 <!-- Script 3: Nano -->
                 <div class="product-card">
                     <div class="logo-wrapper">
-                        <div class="logo-container">
-                            <img src="https://z-cdn-media.chatglm.cn/files/8707874f-4929-453c-b216-d44917c11880.jpg?auth_key=1868807694-0324455d9fd2468f84ccb03166e94b68-0-83c236727cde929e3fd9352ec0c60dd9" alt="Nano Logo" class="logo-img">
+                        <!-- UPDATED LOGO: Tech/Futuristic Image -->
+                        <div class="logo-container wide-padding logo-bg-dark">
+                            <img src="https://z-cdn-media.chatglm.cn/files/965b7901-361e-4c0e-a1f4-a3c61b6c4337.jpg?auth_key=1868832987-bd6d9bd50be243aa8cb20aa0f6a63ebb-0-5251c5766c3e0d026feef399549c131a" alt="Nano Logo" class="logo-img">
                         </div>
                     </div>
                     <h2 class="product-title">Nano Hub</h2>
@@ -76,6 +79,58 @@
 
             </div>
         </section>
+
+        <!-- FITUR SCRIPT SECTION -->
+        <section class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Features</h2>
+                    <p>Explore the benefits of each script designed for maximum performance.</p>
+                </div>
+
+                <div class="features-grid">
+                    
+                    <!-- Fitur Seraphin -->
+                    <div class="feature-card">
+                        <div class="feature-icon icon-purple">S</div>
+                        <h3>Seraphin</h3>
+                        <ul class="feature-list">
+                            <li>✓ Stable fishing rod</li>
+                            <li>✓ Simple UI</li>
+                            <li>✓ 2 notifications but stable and no mis</li>
+                            <li>✓ Lightweight script to use</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fitur Vora -->
+                    <div class="feature-card">
+                        <div class="feature-icon icon-blue">V</div>
+                        <h3>Vora</h3>
+                        <ul class="feature-list">
+                            <li>✓ Smooth and Simple UI</li>
+                            <li>✓ Very Easy To Use</li>
+                            <li>✓ Update Script Every Single Day</li>
+                            <li>✓ And The Owner Was So Cool</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fitur Nano -->
+                    <div class="feature-card">
+                        <div class="feature-icon icon-cyan">N</div>
+                        <h3>Nano</h3>
+                        <ul class="feature-list">
+                            <li>✓ Lightweight script to use</li>
+                            <li>✓ Clean Ui</li>
+                            <li>✓ Stable fishing on 2 notifications</li>
+                            <li>✓ Very fast exe</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- END FITUR SCRIPT SECTION -->
+
     </main>
 
     <!-- FOOTER -->
@@ -91,7 +146,7 @@
             <button class="close-btn" onclick="closeModal()">&times;</button>
             
             <h3 style="text-align: center; margin-bottom: 25px; font-size: 1.3rem;">
-                Checkout: <span id="modal-prod" style="color:var(--accent-color)"></span>
+                Checkout: <span id="modal-prod" style="color:var(--accent)"></span>
             </h3>
             
             <div class="form-group">
@@ -104,8 +159,8 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">2. Email Penerima Key</label>
-                <input type="email" id="userEmail" class="form-input" placeholder="emailanda@gmail.com" required>
+                <label class="form-label">2. Nomor Penerima Key</label>
+                <input type="email" id="userEmail" class="form-input" placeholder="example : +62xxxx" required>
             </div>
 
             <div class="instruction-box">
@@ -131,7 +186,7 @@
         </div>
     </div>
 
-    <!-- Link ke JavaScript -->
+    <!-- Link ke JavaScript Eksternal -->
     <script src="script.js"></script>
 </body>
 </html>
