@@ -34,7 +34,7 @@ function sendToWhatsApp() {
         return;
     }
 
-    const phoneNumber = "6287725677229";
+    const phoneNumber = "6285119252063";
     
     // Format Pesan
     const message = `Permisi ini bukti tf nya.
@@ -60,4 +60,5 @@ Mohon dikirimkan key setelah verifikasi.`;
     setTimeout(() => {
         closeModal();
     }, 500);
+
 }
