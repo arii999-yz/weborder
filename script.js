@@ -1,64 +1,44 @@
-const modal = document.getElementById('checkoutModal');
-const prodSpan = document.getElementById('modal-prod');
-const priceSpan = document.getElementById('modal-price');
-const emailInput = document.getElementById('userEmail');
+// GANTI NOMOR WHATSAPP ADMIN DI SINI
+const ADMIN_WA = "6285119252063"; 
 
-// Fungsi Buka Modal Checkout
-function openCheckout(name, price) {
-    prodSpan.textContent = name;
-    priceSpan.textContent = price;
-    emailInput.value = ''; 
-    modal.classList.add('active');
+function openCheckout(productName, price) {
+    document.getElementById('modal-prod').innerText = productName;
+    document.getElementById('modal-price').innerText = price;
+    document.getElementById('checkoutModal').classList.add('active');
+    
+    // LOCK BACKGROUND SCROLL
+    document.body.classList.add('modal-open');
 }
 
-// Fungsi Tutup Modal
 function closeModal() {
-    modal.classList.remove('active');
+    document.getElementById('checkoutModal').classList.remove('active');
+    
+    // UNLOCK BACKGROUND SCROLL
+    document.body.classList.remove('modal-open');
 }
 
-// Event Listener: Tutup modal jika klik di luar area (background gelap)
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
+// Close modal when clicking outside the modal content
+document.getElementById('checkoutModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
 });
 
-// Fungsi Kirim ke WhatsApp
 function sendToWhatsApp() {
-    const email = emailInput.value;
-    const product = prodSpan.textContent;
-    const price = priceSpan.textContent;
+    const product = document.getElementById('modal-prod').innerText;
+    const price = document.getElementById('modal-price').innerText;
+    const email = document.getElementById('userEmail').value;
 
-    // Validasi sederhana: Pastikan email diisi
     if (!email) {
-        alert("Mohon isi email Anda terlebih dahulu agar Key bisa dikirim.");
-        emailInput.focus();
+        alert("Mohon masukkan nomor penerima key terlebih dahulu.");
         return;
     }
 
-    const phoneNumber = "6285119252063";
+    const text = `Halo Admin NexussStoree, saya ingin membeli script *${product}* seharga Rp ${price}.%0A%0A` +
+                 `📧 Nomor Penerima Key: ${email}%0A` +
+                 `💰 Bukti Transfer: (Saya lampirkan setelah pesan ini)`;
+
+    const url = `https://wa.me/${ADMIN_WA}?text=${text}`;
     
-    // Format Pesan
-    const message = `Permisi ini bukti tf nya.
-
-Nama Produk: ${product}
-Harga: Rp ${price}
-Email Penerima Key: ${email}
-
-Mohon dikirimkan key setelah verifikasi.`;
-
-    // Encode pesan agar aman untuk URL
-    const encodedMessage = encodeURIComponent(message);
-    const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-    try {
-        window.open(waUrl, '_blank');
-    } catch (error) {
-        console.error("Gagal membuka WA:", error);
-        alert("Jendela WhatsApp tidak terbuka otomatis. Silakan klik link ini:\n" + waUrl);
-    }
-    
-    // Opsional: Tutup modal setelah delay singkat
-    setTimeout(() => {
-        closeModal();
-    }, 500);
-
+    window.open(url, '_blank');
 }
